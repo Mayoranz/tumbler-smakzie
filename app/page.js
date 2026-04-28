@@ -196,7 +196,7 @@ export default function Home() {
 
           {/* CTA */}
           <a
-            href="https://wa.me/6281462256193?text=saya%20ingin%20memesan%20tumbler%20smakzie"
+            href="https://wa.me/6281462256193?text=assalamualaikum%20Pak%20Arkan,%20saya%20ingin%20memesan%20tumbler%20smakzie"
             target="_blank"
             rel="noopener noreferrer"
             className="hidden md:inline-flex btn-gold !py-3 !px-7 !text-[12px] !tracking-[2px]"
@@ -230,7 +230,7 @@ export default function Home() {
               )
             )}
             <a
-              href="https://wa.me/6281462256193?text=saya%20ingin%20memesan%20tumbler%20smakzie"
+              href="https://wa.me/6281462256193?text=assalamualaikum%20Pak%20Arkan,%20saya%20ingin%20memesan%20tumbler%20smakzie"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-gold mt-4"
@@ -579,7 +579,7 @@ export default function Home() {
             </div>
 
             <a
-              href="https://wa.me/6281462256193?text=saya%20ingin%20memesan%20tumbler%20smakzie"
+              href="https://wa.me/6281462256193?text=assalamualaikum%20Pak%20Arkan,%20saya%20ingin%20memesan%20tumbler%20smakzie"
               target="_blank"
               rel="noopener noreferrer"
               className="btn-whatsapp animate-pulse-glow justify-center w-full sm:w-auto"
