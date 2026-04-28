@@ -23,6 +23,11 @@ export const metadata = {
     "tumbler elegan",
     "tumbler custom",
   ],
+  icons: {
+    icon: "/logo_zielabs_kotak.png",
+    shortcut: "/logo_zielabs_kotak.png",
+    apple: "/logo_zielabs_kotak.png",
+  },
   openGraph: {
     title: "Tumbler Smakzie — Stylish, Practical, Made for Your Daily Life",
     description:
