@@ -319,8 +319,8 @@ export default function Home() {
                   <Image
                     src="/tumbler-removebg.png"
                     alt="Tumbler Smakzie — tumbler hitam elegan bertuliskan SMAKZIE"
-                    width={600}
-                    height={700}
+                    width={500}
+                    height={600}
                     className="product-glow w-[350px] sm:w-[450px] lg:w-[600px] h-auto object-contain"
                     priority
                   />
