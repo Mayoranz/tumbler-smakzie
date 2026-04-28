@@ -300,12 +300,12 @@ export default function Home() {
 
             {/* Hero Product Image */}
             <div
-              className={`flex-1 flex justify-center ${
+              className={`flex-0 flex justify-center ${
                 heroIn ? "animate-scale-in" : "opacity-0"
               }`}
-              style={{ animationDelay: "0.3s", animationFillMode: "both", maxWidth: "450px", width: "100%" }}
+              style={{ animationDelay: "0.3s", animationFillMode: "both", flexShrink: 0 }}
             >
-              <div className="relative" style={{ width: "100%", maxWidth: "450px" }}>
+              <div className="relative" style={{ width: "300px" }}>
                 {/* Cyan glow ring */}
                 <div
                   className="absolute inset-0 rounded-full"
@@ -319,10 +319,11 @@ export default function Home() {
                   <Image
                     src="/tumbler-removebg.png"
                     alt="Tumbler Smakzie — tumbler hitam elegan bertuliskan SMAKZIE"
-                    width={400}
-                    height={500}
-                    className="product-glow h-auto object-contain"
-                    style={{ width: "100%", maxWidth: "450px", height: "auto" }}
+                    width={300}
+                    height={375}
+                    className="product-glow object-contain"
+                    style={{ width: "300px", height: "auto", maxWidth: "300px" }}
+                    sizes="300px"
                     priority
                   />
                 </div>
