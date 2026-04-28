@@ -152,7 +152,7 @@ export default function Home() {
   // Navbar scroll effect
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 40);
-    window.addEventListener("scroll", onScroll);
+    window.addEventListener("scroll", onScroll, { passive: true });
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -256,6 +256,8 @@ export default function Home() {
             fill
             className="object-cover opacity-15"
             priority
+            sizes="100vw"
+            quality={60}
           />
           <div className="absolute inset-0 bg-gradient-to-b from-[#0a0a0a] via-transparent to-[#0a0a0a]" />
           <div className="absolute inset-0 bg-gradient-to-r from-[#0a0a0a]/80 to-transparent" />
@@ -322,9 +324,10 @@ export default function Home() {
                     width={200}
                     height={275}
                     className="product-glow object-contain"
-                    style={{ width: "200px", height: "auto", maxWidth: "200px" }}
-                    sizes="300px"
+                    style={{ width: "auto", height: "auto", maxWidth: "200px" }}
+                    sizes="200px"
                     priority
+                    quality={80}
                   />
                 </div>
               </div>
@@ -455,7 +458,9 @@ export default function Home() {
                     alt={img.alt}
                     fill
                     className="object-cover"
-                    sizes="(max-width: 768px) 50vw, 33vw"
+                    sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                    loading="lazy"
+                    quality={75}
                   />
                   {/* Hover overlay */}
                   <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
@@ -485,6 +490,9 @@ export default function Home() {
                   width={640}
                   height={480}
                   className="w-full h-auto object-cover"
+                  loading="lazy"
+                  sizes="(max-width: 1024px) 100vw, 50vw"
+                  quality={80}
                 />
               </div>
             </div>

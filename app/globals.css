@@ -109,14 +109,7 @@ body {
   50% { opacity: 0.6; transform: scale(1.05); }
 }
 
-@keyframes grain {
-  0%, 100% { transform: translate(0, 0); }
-  10% { transform: translate(-5%, -10%); }
-  30% { transform: translate(3%, -15%); }
-  50% { transform: translate(12%, 9%); }
-  70% { transform: translate(9%, 4%); }
-  90% { transform: translate(-1%, 7%); }
-}
+/* grain animation removed — was causing continuous GPU repaint */
 
 /* ═══════════ ANIMATION UTILITIES ═══════════ */
 .animate-fade-in-up {
@@ -136,21 +129,30 @@ body {
 }
 .animate-float {
   animation: float 5s ease-in-out infinite;
+  will-change: transform;
 }
 .animate-pulse-glow {
   animation: pulse-glow 3s ease-in-out infinite;
+  will-change: box-shadow;
 }
 .animate-reveal {
   animation: reveal 1.2s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
+.animate-fade-in-up {
+  will-change: opacity, transform;
+}
+.animate-scale-in {
+  will-change: opacity, transform;
+}
 
 /* ═══════════ GLASS & CARD STYLES ═══════════ */
 .glass-card {
-  background: rgba(8, 14, 22, 0.6);
-  backdrop-filter: blur(20px);
-  -webkit-backdrop-filter: blur(20px);
+  background: rgba(8, 14, 22, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
   border: 1px solid var(--glass-border);
   box-shadow: 0 0 0 1px rgba(56, 189, 248, 0.06), inset 0 1px 0 rgba(56, 189, 248, 0.08);
+  contain: layout style;
 }
 
 .luxury-card {
@@ -348,17 +350,15 @@ body {
 }
 
 /* ═══════════ GRAIN OVERLAY ═══════════ */
+/* Static grain — no animation to avoid GPU repaint */
 .grain-overlay::before {
   content: '';
   position: fixed;
-  top: -50%;
-  left: -50%;
-  width: 200%;
-  height: 200%;
-  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.03'/%3E%3C/svg%3E");
+  inset: 0;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noise'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.75' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noise)' opacity='0.025'/%3E%3C/svg%3E");
   pointer-events: none;
   z-index: 9999;
-  animation: grain 8s steps(10) infinite;
+  /* No animation — prevents constant 200%x200% repaint */
 }
 
 /* ═══════════ FEATURE ICON ═══════════ */
@@ -411,8 +411,9 @@ body {
 
 /* ═══════════ NAVBAR ═══════════ */
 .nav-blur {
-  background: rgba(10, 10, 10, 0.7);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  background: rgba(10, 10, 10, 0.85);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
   border-bottom: 1px solid var(--border-subtle);
+  will-change: background;
 }
