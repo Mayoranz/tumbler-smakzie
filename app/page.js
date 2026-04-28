@@ -322,7 +322,7 @@ export default function Home() {
                     width={300}
                     height={375}
                     className="product-glow object-contain"
-                    style={{ width: "300px", height: "auto", maxWidth: "300px" }}
+                    style={{ width: "200px", height: "auto", maxWidth: "200px" }}
                     sizes="300px"
                     priority
                   />
