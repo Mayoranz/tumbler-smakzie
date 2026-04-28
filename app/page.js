@@ -303,9 +303,9 @@ export default function Home() {
               className={`flex-1 flex justify-center ${
                 heroIn ? "animate-scale-in" : "opacity-0"
               }`}
-              style={{ animationDelay: "0.3s", animationFillMode: "both" }}
+              style={{ animationDelay: "0.3s", animationFillMode: "both", maxWidth: "450px", width: "100%" }}
             >
-              <div className="relative">
+              <div className="relative" style={{ width: "100%", maxWidth: "450px" }}>
                 {/* Cyan glow ring */}
                 <div
                   className="absolute inset-0 rounded-full"
@@ -321,7 +321,8 @@ export default function Home() {
                     alt="Tumbler Smakzie — tumbler hitam elegan bertuliskan SMAKZIE"
                     width={400}
                     height={500}
-                    className="product-glow w-[250px] sm:w-[350px] lg:w-[450px] h-auto object-contain"
+                    className="product-glow h-auto object-contain"
+                    style={{ width: "100%", maxWidth: "450px", height: "auto" }}
                     priority
                   />
                 </div>
